@@ -1,9 +1,7 @@
-from config.config import DriverClient
-from common.utils.openApp import openAppUtil
 
 import warnings
 import unittest
-import HTMLTestRunner
+import HTMLTestReportCN
 import time
 
 
@@ -54,13 +52,13 @@ if __name__ == '__main__':
     suite = unittest.TestSuite([suite1])
 
     #设置测试报告保存路径
-    file_path = '/Users/app/Documents/autoTest/TestReport/'
+    file_path = 'F:\\GZBAPP\\login\\a.html'
     #获取系统当前时间
     now = time.strftime("%Y-%m-%d %H_%M_%S", time.localtime())
     #设置报告文件名称
     report_name = file_path + now + "Login_test_Report.html"
 
     fp = open(report_name, 'wb')
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='login_report', description='report_description')
+    runner = HTMLTestReportCN.HTMLTestRunner(stream=fp, tester='潘颖', title='login_report', description='report_description')
     runner.run(suite)
     fp.close()
